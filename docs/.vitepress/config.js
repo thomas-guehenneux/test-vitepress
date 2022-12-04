@@ -3,7 +3,6 @@ export default {
   base: '/test-vitepress/',
   themeConfig: {
     siteTitle: 'Guard UI',
-    // logo: '/authing-logo.svg',
 
     algolia: {
       appId: 'XO4ITI7GEQ',
