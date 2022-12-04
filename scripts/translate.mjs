@@ -9,7 +9,7 @@ function exitWithError(errorMessage) {
   process.exit(1);
 }
 
-const inputFiles = argv.inputFiles.split(' ');
+const inputFiles = argv.inputFiles.split(' ').filter(file => file.match(/\/.[^\/]*\.md/));
 if (!inputFiles) {
   exitWithError("Error: You must specify the --inputFiles argument with either an array of files. File path must be absolute path.");
 }
