@@ -1,0 +1,42 @@
+on:
+  pull_request:
+      branches: ["master", "develop"]
+
+env:
+  DEEPL_FREE_URL: https://api-free.deepl.com/v2
+  DEEPL_TOKEN: ${{ secrets.DEEPL_TOKEN }}
+
+jobs:
+  translate2en:
+    runs-on: ubuntu-latest
+    name: A job to test this action
+    steps:
+      - name: Install pandoc
+        run: sudo curl -sLJ -o /usr/bin/pandoc.deb https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb && sudo dpkg -i /usr/bin/pandoc.deb
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install zx
+        run: npm i
+      - name: Get specific changed files
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v14.5
+        with:
+          files: |
+            docs/ja/**
+          json: "true"
+      - name: Translate modified files to English
+        id: translate
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: | 
+          npx zx scripts/translate.mjs --inputFiles "${{steps.changed-files-specific.outputs.all_changed_files}}"
+      - name: Commit result
+        run: |
+          git config --global user.name 'thomas-guehenneux'
+          git config --global user.email '97498481+thomas-guehenneux@users.noreply.github.com'
+          git add .
+          git commit -am 'English translation'
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ github.head_ref }}
+          force: true
