@@ -1,2 +1,0 @@
-# Get Guard Instance
-

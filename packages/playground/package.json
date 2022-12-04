@@ -1,8 +1,0 @@
-{
-  "name": "guard-ui-playground",
-  "version": "1.0.0",
-  "license": "MIT",
-  "dependencies": {
-    "monaco-editor": "^0.34.0"
-  }
-}
