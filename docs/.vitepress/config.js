@@ -1,6 +1,5 @@
 export default {
   title: 'Guard UI',
-  base: '/test-vitepress/',
   themeConfig: {
     siteTitle: 'Guard UI',
 
