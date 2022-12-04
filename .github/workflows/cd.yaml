@@ -22,7 +22,7 @@ jobs:
         uses: tj-actions/changed-files@v14.5
         with:
           files: |
-            docs/ja/**.md
+            docs/ja/**
       - name: Translate modified files to English
         id: translate
         if: steps.changed-files-specific.outputs.any_changed == 'true'
