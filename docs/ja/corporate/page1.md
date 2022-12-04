@@ -1,9 +1,5 @@
 # はじめに
 
-<audio id="vite-audio">
-  <source src="/vite.mp3" type="audio/mpeg">
-</audio>
-
 ## 概要
 
 Vite（フランス語で「素早い」という意味の単語で `/vit/`<button style="border:none;padding:3px;border-radius:4px;vertical-align:bottom" id="play-vite-audio" onclick="document.getElementById('vite-audio').play();"><svg style="height:2em;width:2em"><use href="/voice.svg#voice" /></svg></button> ヴィートのように発音）は、現代の Web プロジェクトのために、より速く無駄のない開発体験を提供することを目的としたビルドツールです。2 つの主要な部分で構成されています:
@@ -36,10 +32,6 @@ Vite はすぐに使える実用的なデフォルトが付属していて、プ
 |  [svelte](https://vite.new/svelte)  |  [svelte-ts](https://vite.new/svelte-ts)  |
 
 ## 最初の Vite プロジェクトを生成する
-
-::: tip 互換性について
-Vite は [Node.js](https://nodejs.org/en/) 14.18+、16+ のバージョンが必要です。ただし、一部のテンプレートではそれ以上のバージョンの Node.js を必要としますので、パッケージマネージャが警告を出した場合はアップグレードしてください。
-:::
 
 NPM を使う場合:
 

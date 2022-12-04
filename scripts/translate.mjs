@@ -43,12 +43,22 @@ for (let index = 0; index < inputFiles.length; index++) {
   const outputFile = outputFiles[index];
 
   await $`pandoc ${inputFile} --from gfm --to html5 --no-highlight --output ${htmlInputFile}`
-  const response = await $`curl -X POST 'https://api-free.deepl.com/v2/document' \
-                -H 'Authorization: DeepL-Auth-Key ${process.env.DEEPL_TOKEN}' \
-                -F 'source_lang=JA' \
-                -F 'target_lang=EN' \
-                -F 'file=@${htmlInputFile}'`
+  let response = await $`curl -X POST 'https://api-free.deepl.com/v2/document' \
+                                -H 'Authorization: DeepL-Auth-Key ${process.env.DEEPL_TOKEN}' \
+                                -F 'source_lang=JA' \
+                                -F 'target_lang=EN' \
+                                -F 'file=@${htmlInputFile}'`
   const json = JSON.parse(response.stdout)
+
+  let status = "queued"
+  while (["queued", "translating"].includes(status)) {
+    response = await $`curl -X POST 'https://api-free.deepl.com/v2/document/${json.document_id}' \
+                            -H 'Authorization: DeepL-Auth-Key ${process.env.DEEPL_TOKEN}' \
+                            -d 'document_key=${json.document_key}'`
+    status = JSON.parse(response.stdout).status
+    let seconds_remaining = JSON.parse(response.stdout).seconds_remaining
+    await $`sleep 3`
+  }
 
   await $`curl -X POST 'https://api-free.deepl.com/v2/document/${json.document_id}/result' \
                 -H 'Authorization: DeepL-Auth-Key ${process.env.DEEPL_TOKEN}' \
