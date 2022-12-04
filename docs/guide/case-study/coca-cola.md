@@ -1,3 +1,0 @@
-# Coca-Cola
-
-Coming soon...
