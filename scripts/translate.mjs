@@ -44,14 +44,14 @@ for (let index = 0; index < inputFiles.length; index++) {
 
   await $`pandoc ${inputFile} --from gfm --to html5 --no-highlight --output ${htmlInputFile}`
   const response = await $`curl -X POST 'https://api-free.deepl.com/v2/document' \
-                -H 'Authorization: DeepL-Auth-Key 8ac624b1-c50d-e528-d07d-d34a4ef7eaec:fx' \
+                -H 'Authorization: DeepL-Auth-Key ${process.env.DEEPL_TOKEN}' \
                 -F 'source_lang=JA' \
                 -F 'target_lang=EN' \
                 -F 'file=@${htmlInputFile}'`
   const json = JSON.parse(response.stdout)
 
   await $`curl -X POST 'https://api-free.deepl.com/v2/document/${json.document_id}/result' \
-                -H 'Authorization: DeepL-Auth-Key 8ac624b1-c50d-e528-d07d-d34a4ef7eaec:fx' \
+                -H 'Authorization: DeepL-Auth-Key ${process.env.DEEPL_TOKEN}' \
                 -d 'document_key=${json.document_key}' \
                 --output '${htmlOutputFile}'`
   await $`pandoc ${htmlOutputFile} --from html --to gfm --no-highlight --output ${outputFile}`

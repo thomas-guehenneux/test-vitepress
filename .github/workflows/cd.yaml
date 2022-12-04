@@ -1,6 +1,6 @@
 on:
   pull_request:
-      branches: ["master", "develop"]
+      branches: ["master", "develop", "main"]
 
 env:
   DEEPL_FREE_URL: https://api-free.deepl.com/v2
