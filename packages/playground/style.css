@@ -1,0 +1,61 @@
+body {
+    font-family: "Source Han Sans", "San Francisco", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+    transition: background-color .2s;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#header {
+    top: 0;
+    left: 0;
+    height: 44px;
+    right: 0;
+
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+
+    line-height: 44px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 16px;
+
+    overflow: hidden;
+    z-index: 0;
+}
+
+.editorTitle {
+    padding-left: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #f1f1f1;
+    font-size: 12px;
+}
+
+#root {
+    display: flex;
+    height: 100%;
+}
+
+#editorContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#htmlEditor {
+    flex: 1;
+}
+
+#jsEditor {
+    flex: 1;
+}
+
+#guard {
+    flex: 1;
+}
+
+#outputEditor {
+    flex: 1;
+}
