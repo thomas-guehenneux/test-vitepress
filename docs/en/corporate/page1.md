@@ -6,22 +6,22 @@ Vite (French word meaning "quick", pronounced like `/vit/` vite) is a
 build tool that aims to provide a faster and leaner development
 experience for modern web projects:
 
-- A development server that provides [rich enhancements](./features)
-  using [native ES
+- A development server that provides [rich enhancements](./page1) using
+  [native ES
   modules](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules),
-  including very fast [Hot Module Replacement
-  (HMR](./features#hot-module-replacement) ).
+  including very fast [Hot Module Replacement (HMR](./page1) ).
 
 - A build command that bundles code with [Rollup](https://rollupjs.org).
-  Preconfigured to output highly optimized static assets for production.
+  It is preconfigured to output highly optimized static assets for
+  production.
 
 Vite comes with practical out-of-the-box defaults and is designed to be
 used in its project-generated configuration, but is also highly
-extensible through the [Plugin API](./api-plugin) and [JavaScript
-API](./api-javascript) with full type support.
+extensible through the [Plugin API](./page2) and [JavaScript
+API](./page2) with full type support.
 
 You can learn more about the basic principles behind the project in the
-[Why Vite](./why) section.
+[Why Vite](./page2) section.
 
 ## Browser Support
 
@@ -32,7 +32,7 @@ support
 [`import.meta`](https://caniuse.com/mdn-javascript_operators_import_meta).
 Legacy browsers are supported via the official
 [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy).
-See the [Build for Production](./build) section for more information.
+See the [Build for Production](./page1) section for more information.
 
 ## Try Vite Online
 
@@ -130,7 +130,7 @@ regular static file server (except that it is far more powerful!). Vite
 can also handle dependencies that resolve to filesystem locations
 outside the root, so it can be used in monorepo-based configurations.
 
-Vite also supports [multi-page apps](./build#マルチページアプリ) with
+Vite also supports [multi-page apps](./page1#マルチページアプリ) with
 multiple `.html` entry points.
 
 #### Specifying an alternate route
