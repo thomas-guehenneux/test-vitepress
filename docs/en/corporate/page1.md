@@ -2,10 +2,9 @@
 
 ## outline
 
-Vite (French word meaning "quick" and
-`/vit/`.![](data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iaGVpZ2h0OjJlbTt3aWR0aDoyZW0iPjx1c2UgaHJlZj0iL3ZvaWNlLnN2ZyN2b2ljZSI+PC91c2U+PC9zdmc+)
-Vite (pronounced like /vit/) is a build tool that aims to provide a
-faster and leaner development experience for modern web projects:
+Vite (French word meaning "quick", pronounced like `/vit/` vite) is a
+build tool that aims to provide a faster and leaner development
+experience for modern web projects:
 
 - A development server that provides [rich enhancements](./features)
   using [native ES
@@ -14,8 +13,7 @@ faster and leaner development experience for modern web projects:
   (HMR](./features#hot-module-replacement) ).
 
 - A build command that bundles code with [Rollup](https://rollupjs.org).
-  It is preconfigured to output highly optimized static assets for
-  production.
+  Preconfigured to output highly optimized static assets for production.
 
 Vite comes with practical out-of-the-box defaults and is designed to be
 used in its project-generated configuration, but is also highly
@@ -40,7 +38,7 @@ See the [Build for Production](./build) section for more information.
 
 You can try Vite online with [StackBlitz](https://vite.new/), which runs
 a Vite-based build setup directly in your browser, much like a local
-setup, but you don't need to install anything on your machine. Go to
+setup, but without having to install anything on your machine. Go to
 `vite.new/{template}` You can navigate to vite.new/{template} and select
 the framework you want to use.
 
