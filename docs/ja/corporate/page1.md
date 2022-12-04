@@ -4,17 +4,17 @@
 
 Vite（フランス語で「素早い」という意味の単語で `/vit/` ヴィートのように発音）は、現代の Web プロジェクトのために、より速く無駄のない開発体験を提供することを目的としたビルドツールです。2 つの主要な部分で構成されています:
 
-- 非常に高速な [Hot Module Replacement (HMR)](./features#hot-module-replacement) など、[ネイティブ ES モジュール](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)を利用した[豊富な機能拡張](./features)を提供する開発サーバ。
+- 非常に高速な [Hot Module Replacement (HMR)](./page1) など、[ネイティブ ES モジュール](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)を利用した[豊富な機能拡張](./page1)を提供する開発サーバ。
 
 - [Rollup](https://rollupjs.org) でコードをバンドルするビルドコマンド。プロダクション用に高度に最適化された静的アセットを出力するように事前に設定されています。
 
-Vite はすぐに使える実用的なデフォルトが付属していて、プロジェクト生成された構成のままで使えるように設計されていますが、完全な型サポートのある [Plugin API](./api-plugin) と [JavaScript API](./api-javascript) によって高い拡張性もあります。
+Vite はすぐに使える実用的なデフォルトが付属していて、プロジェクト生成された構成のままで使えるように設計されていますが、完全な型サポートのある [Plugin API](./page2) と [JavaScript API](./page2) によって高い拡張性もあります。
 
-プロジェクトの背景にある基本原理について、[なぜ Vite なのか](./why) セクションで詳しく知ることができます。
+プロジェクトの背景にある基本原理について、[なぜ Vite なのか](./page2) セクションで詳しく知ることができます。
 
 ## ブラウザ対応
 
-デフォルトのビルドは [ネイティブ ES モジュール](https://caniuse.com/es6-module)、[ネイティブ ESM のダイナミックインポート](https://caniuse.com/es6-module-dynamic-import)、[`import.meta`](https://caniuse.com/mdn-javascript_operators_import_meta)に対応しているブラウザが対象です。レガシーブラウザは公式の [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy) でサポートされています。詳細は [本番環境用のビルド](./build) セクションをご覧ください。
+デフォルトのビルドは [ネイティブ ES モジュール](https://caniuse.com/es6-module)、[ネイティブ ESM のダイナミックインポート](https://caniuse.com/es6-module-dynamic-import)、[`import.meta`](https://caniuse.com/mdn-javascript_operators_import_meta)に対応しているブラウザが対象です。レガシーブラウザは公式の [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy) でサポートされています。詳細は [本番環境用のビルド](./page1) セクションをご覧ください。
 
 ## Vite をオンラインで試す
 
@@ -97,7 +97,7 @@ Vite は `index.html` をソースコードとして、またモジュールグ�
 
 静的な http サーバと同様に、Vite には、ファイルの提供元となる「ルートディレクトリ」の概念があります。ドキュメントの残りの部分では `<root>` として示されています。ソースコード内の絶対 URL は、プロジェクトルートをベースとして使って解決されるため、通常の静的ファイルサーバを使用しているかのようにコードを記述できます（遥かに強力であることを除いては！）。Vite はルート外のファイルシステムの場所に解決される依存関係を処理することもできるため、モノレポベースの構成でも使用できます。
 
-Vite は複数の `.html` エントリポイントを持つ[マルチページアプリ](./build#マルチページアプリ)にも対応しています。
+Vite は複数の `.html` エントリポイントを持つ[マルチページアプリ](./page1#マルチページアプリ)にも対応しています。
 
 #### 代替ルートの指定
 
